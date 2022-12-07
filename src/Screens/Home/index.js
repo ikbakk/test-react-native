@@ -115,12 +115,20 @@ const Home = () => {
         <View style={styles.sectionContainerColumn}>
           <ContentTitle judul={'Budaya dan Adat'} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <ColumnCard title={'Upacara Rebo Bontong'} subtitle={'Pringgabaya, Lombok Timur'} img={require(reboBontong)} color={'#93D564'} />
-              <ColumnCard title={'Bau Nyale'} subtitle={'Kuta, Lombok Tengah'} img={require(rS)} color={'#93D564'} />
-              <ColumnCard title={'Roah Segare'} subtitle={'Kuranji Dalang, Lombok Timur'} img={require(rS)} color={'#93D564'} />
+            <ColumnCard title={'Upacara Rebo Bontong'} subtitle={'Pringgabaya, Lombok Timur'} img={require(reboBontong)} color={'#93D564'} height={180} />
+            <ColumnCard title={'Bau Nyale'} subtitle={'Kuta, Lombok Tengah'} img={require(nyale)} color={'#CA96F5'} height={180}/>
+            <ColumnCard title={'Roah Segare'} subtitle={'Kuranji Dalang, Lombok Timur'} img={require(rS)} color={'#CD5D58'} height={180}/>
           </ScrollView>
         </View>
 
+        <View>
+          <ContentTitle judul={'Cerita Rakyat'} />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ColumnCard title={'Upacara Rebo Bontong'} subtitle={'Pringgabaya, Lombok Timur'} img={require(reboBontong)} color={'#93D564'} height={200} />
+            <ColumnCard title={'Bau Nyale'} subtitle={'Kuta, Lombok Tengah'} img={require(nyale)} color={'#CA96F5'} height={200}/>
+            <ColumnCard title={'Roah Segare'} subtitle={'Kuranji Dalang, Lombok Timur'} img={require(rS)} color={'#CD5D58'} height={200}/>
+          </ScrollView>
+        </View>
     </ScrollView>
   )
 }

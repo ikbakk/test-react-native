@@ -31,7 +31,7 @@ const ListAksara = ({ title, img, color, totalChar}) => {
   return (
     <Button 
       buttonStyle={styles.aksaraItem}
-      containerStyle={{paddingBottom:10}}
+      containerStyle={{padding:5}}
       >
         <View style={{flexDirection:'row', alignItems:'center', }}>
           <Image 

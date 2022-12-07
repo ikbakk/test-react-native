@@ -3,11 +3,11 @@ import { View, Image, StyleSheet } from 'react-native'
 import { Text, Button } from '@rneui/themed'
 
 
-const ColumnCard = ({img, color, title, subtitle}) => {
+const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight}) => {
   const styles = StyleSheet.create({
     button:{
       backgroundColor:`${color}`, 
-      height:180,
+      height:height,
       width:200, 
       borderRadius:10,
       borderWidth:2,
@@ -15,8 +15,8 @@ const ColumnCard = ({img, color, title, subtitle}) => {
     },
 
     img:{
-      width: 170, 
-      height: 80, 
+      width: pWidth? pWidth : 180, 
+      height: pHeight? pHeight : 80, 
       backgroundColor:'#ffffff00', 
       borderWidth:1,
       borderRadius:10,
