@@ -1,10 +1,59 @@
 import React from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, StyleSheet, ScrollView } from 'react-native'
 import { Text, Button, Avatar } from '@rneui/themed'
 
 import SettingIcon from '../../Icons/Settings'
 import ForwardArrow from '../../Icons/ForwardArrow'
 import ListAksara from '../../components/ListAksara'
+
+const styles = StyleSheet.create({
+  scrollView:{
+    paddingHorizontal:30, 
+    paddingTop:50,
+  },
+
+  header:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    height:100,
+  },
+
+  avatar:{
+    borderRadius:20, 
+    width:40, 
+    height:40,
+  },
+
+  name:{ 
+    width:'50%', 
+    fontSize:18,
+  },
+
+  iconButton:{
+    backgroundColor: '#FFFFF00',
+  },
+
+  titleApp:{
+    marginVertical:30, 
+    lineHeight:50, 
+    fontSize:48,
+  },
+
+  sectionContainer:{
+    flexDirection:'column',
+    paddingBottom:30,
+  },
+
+  sectionTitle:{
+    fontSize:22, 
+    marginBottom:15,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    marginBottom:15
+  }
+})
 
 const Home = () => {
   const aksaraUtama = '../../../assets/aksara/aksara_utama.png'
@@ -14,48 +63,35 @@ const Home = () => {
     <ScrollView 
       showsVerticalScrollIndicator={false} 
       showsHorizontalScrollIndicator={false} 
-      style={{paddingHorizontal:30}}>
+      contentContainerStyle={{paddingBottom:60}}
+      style={styles.scrollView}>
         <View
-          style={{
-            flexDirection:'row',
-            justifyContent: 'space-around',
-            alignItems:'center',
-            height:100,
-          }}
+          style={styles.header}
         >
           <Button
-          title={<Avatar size={40} rounded title='RJ'/> }
-          buttonStyle={{borderRadius:20, width:40, height:40,}}
+            title={<Avatar size={40} rounded title='RJ'/> }
+            buttonStyle={styles.avatar}
           />
-          <Text style={{width:300, fontSize:18, marginLeft:8}}>Hai, Rafly Junizar!</Text>
+          <Text style={styles.name}>Hai, Rafly Junizar!</Text>
           <Button
-              title={<SettingIcon size={22} />}
-              type='clear'
-              buttonStyle={{}}
+            title={<SettingIcon size={22} />}
+            buttonStyle={styles.iconButton}
           />
         </View>
-        <Text style={{marginVertical:30, width:300, lineHeight:50, fontSize:40}} >Mari Belajar Muatan Lokal!</Text>
-        <View style={{marginBottom:30}} >
-          <Text style={{fontSize:22, marginBottom:15}}>Coba Terjemahkan Kata</Text>
+        <Text style={styles.titleApp} >{`Mari Belajar\nMuatan Lokal!`}</Text>
+        <View style={styles.sectionContainer} >
+          <Text style={styles.sectionTitle}>Coba Terjemahkan Kata</Text>
           <Button 
             title='Terjemahkan kata!'
             buttonStyle={{backgroundColor:'#93D564', borderRadius:10, borderColor:'black', borderWidth:2, paddingVertical:15}}
           />
         </View>
-        <View>
-          <View 
-            style={{
-              flexDirection:'row',
-              justifyContent:'space-between',
-              alignItems:'center',
-              marginBottom:15
-            }}
-          >
+        <View style={styles.sectionContainer}>
+          <View style={styles.sectionTitle}>
             <Text style={{fontSize:22}}>Aksara</Text>
             <Button
               title={<ForwardArrow size={18} />}
-              type='clear'
-              buttonStyle={{}}
+              buttonStyle={styles.iconButton}
             />
           </View>
           <View style={{flexDirection:'column'}}>
@@ -65,11 +101,13 @@ const Home = () => {
           </View>
           <Button 
             title={'Lihat Selengkapnya'}
-            buttonStyle={{backgroundColor: '#FFFFFF00', borderRadius:10}}
             titleStyle={{color:'#ababab'}}
+            buttonStyle={{backgroundColor: '#FFFFFF00', borderRadius:10}}
           />
         </View>
     </ScrollView>
   )
 }
+
+
 export default Home
