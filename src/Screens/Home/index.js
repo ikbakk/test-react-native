@@ -102,6 +102,9 @@ const Home = () => {
           />
         </View>
 
+        <View style={styles.sectionContainer}>
+          
+        </View>
 
     </ScrollView>
   )
