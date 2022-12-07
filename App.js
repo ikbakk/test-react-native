@@ -19,7 +19,7 @@ export default function App() {
       <Tab.Navigator 
         screenOptions={{ 
           headerShown: false,
-          tabBarActiveTintColor: 'green',
+          tabBarActiveTintColor: '#93D564',
           tabBarStyle: {height:80, paddingHorizontal:40, paddingBottom:10, paddingTop:5},
           tabBarLabelStyle: {fontSize:14, marginTop:-10, paddingBottom:5}
         }}>
