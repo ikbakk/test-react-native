@@ -17,11 +17,12 @@ export default function App() {
     <SafeAreaProvider>
     <NavigationContainer>
       <Tab.Navigator 
+
         screenOptions={{ 
           headerShown: false,
           tabBarActiveTintColor: '#93D564',
-          tabBarStyle: {height:80, paddingHorizontal:40, paddingBottom:10, paddingTop:5},
-          tabBarLabelStyle: {fontSize:14, marginTop:-10, paddingBottom:5}
+          tabBarStyle: {paddingHorizontal:40, paddingVertical:10},
+          tabBarLabelStyle: {fontSize:14}
         }}>
           <Tab.Screen 
             name='Home'
