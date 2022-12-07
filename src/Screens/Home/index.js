@@ -42,6 +42,11 @@ const styles = StyleSheet.create({
 
   sectionContainer:{
     flexDirection:'column',
+    paddingBottom:10,
+  },
+
+  sectionContainerColumn:{
+    flexDirection:'column',
     paddingBottom:30,
   },
 
@@ -102,8 +107,8 @@ const Home = () => {
           />
         </View>
 
-        <View style={styles.sectionContainer}>
-          
+        <View style={styles.sectionContainerColumn}>
+          <ContentTitle judul={'Budaya dan Adat'} />
         </View>
 
     </ScrollView>
