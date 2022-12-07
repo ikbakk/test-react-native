@@ -3,8 +3,8 @@ import { View, StyleSheet, ScrollView } from 'react-native'
 import { Text, Button, Avatar } from '@rneui/themed'
 
 import SettingIcon from '../../Icons/Settings'
-import ForwardArrow from '../../Icons/ForwardArrow'
 import ListAksara from '../../components/ListAksara'
+import ContentTitle from '../../components/ContentTitle'
 
 const styles = StyleSheet.create({
   scrollView:{
@@ -65,9 +65,8 @@ const Home = () => {
       showsHorizontalScrollIndicator={false} 
       contentContainerStyle={{paddingBottom:60}}
       style={styles.scrollView}>
-        <View
-          style={styles.header}
-        >
+        
+        <View style={styles.header}>
           <Button
             title={<Avatar size={40} rounded title='RJ'/> }
             buttonStyle={styles.avatar}
@@ -78,7 +77,9 @@ const Home = () => {
             buttonStyle={styles.iconButton}
           />
         </View>
+
         <Text style={styles.titleApp} >{`Mari Belajar\nMuatan Lokal!`}</Text>
+
         <View style={styles.sectionContainer} >
           <Text style={styles.sectionTitle}>Coba Terjemahkan Kata</Text>
           <Button 
@@ -86,8 +87,9 @@ const Home = () => {
             buttonStyle={{backgroundColor:'#93D564', borderRadius:10, borderColor:'black', borderWidth:2, paddingVertical:15}}
           />
         </View>
-        <View style={styles.sectionContainer}>
 
+        <View style={styles.sectionContainer}>
+          <ContentTitle judul={'Aksara'} />
           <View style={{flexDirection:'column'}}>
             <ListAksara title={'Aksara Utama'} color={'#77BEF5'} img={require(aksaraUtama)} totalChar={'18 Karakter'} />
             <ListAksara title={'Aksara Gantungan'} color={'#CD5D58'} img={require(aksaraGantungan)} totalChar={'18 Karakter'} />
@@ -99,6 +101,8 @@ const Home = () => {
             buttonStyle={{backgroundColor: '#FFFFFF00', borderRadius:10}}
           />
         </View>
+
+
     </ScrollView>
   )
 }

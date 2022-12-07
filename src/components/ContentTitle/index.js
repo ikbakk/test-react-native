@@ -4,7 +4,7 @@ import { Text, Button } from '@rneui/themed'
 
 import ForwardArrow from '../../Icons/ForwardArrow'
 
-const ContentTitle = (title) => {
+const ContentTitle = ({judul}) => {
   const styles = StyleSheet.create({
     sectionTitle:{
       fontSize:22, 
@@ -22,7 +22,7 @@ const ContentTitle = (title) => {
 
   return (
     <View style={styles.sectionTitle}>
-    <Text style={{fontSize:22}}>{title}</Text>
+    <Text style={{fontSize:22}}>{judul}</Text>
     <Button
       title={<ForwardArrow size={18} />}
       buttonStyle={styles.iconButton}
