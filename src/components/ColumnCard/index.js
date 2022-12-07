@@ -28,7 +28,7 @@ const ColumnCard = ({img, color, title, subtitle}) => {
   return (
     <Button 
       buttonStyle={styles.button}
-      containerStyle={{paddingBottom:10}}
+      containerStyle={{paddingHorizontal:5}}
       >
         <View style={{flexDirection:'column', alignItems:'center', paddingTop:10}}>
           <Image 
