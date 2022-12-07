@@ -28,16 +28,16 @@ const ColumnCard = ({img, color, title, subtitle}) => {
   return (
     <Button 
       buttonStyle={styles.button}
-      containerStyle={{paddingHorizontal:5}}
+      containerStyle={{padding:5}}
       >
         <View style={{flexDirection:'column', alignItems:'center', paddingTop:10}}>
           <Image 
             source={img}
             style={styles.img}
           />
-            <View style={{paddingTop:10}}>
-              <Text style={{fontSize:22, color:'#ffffff',}}>{title}</Text>
-              <Text style={{fontSize:16, color:'#ffffff'}}>{subtitle}</Text>
+            <View style={{paddingTop:10, flexDirection:'column', alignItems:'flex-start', width:180}}>
+                <Text style={{fontSize:22, color:'#ffffff',}}>{title}</Text>
+                <Text style={{fontSize:16, color:'#ffffff', alignSelf:'stretch'}}>{subtitle}</Text>
             </View>
         </View>
     </Button>

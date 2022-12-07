@@ -66,6 +66,8 @@ const Home = () => {
   const aksaraGantungan = '../../../assets/aksara/aksara_gantungan.png'
   const aksaraSandangan = '../../../assets/aksara/aksara_sandangan.png'
   const reboBontong = '../../../assets/budaya/reboBontong.png'
+  const nyale = '../../../assets/budaya/nyale.png'
+  const rS = '../../../assets/budaya/roahSegare.png'
 
   return (
     <ScrollView 
@@ -114,7 +116,8 @@ const Home = () => {
           <ContentTitle judul={'Budaya dan Adat'} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <ColumnCard title={'Upacara Rebo Bontong'} subtitle={'Pringgabaya, Lombok Timur'} img={require(reboBontong)} color={'#93D564'} />
-              <ColumnCard img={require(reboBontong)} color={'#93D564'} />
+              <ColumnCard title={'Bau Nyale'} subtitle={'Kuta, Lombok Tengah'} img={require(rS)} color={'#93D564'} />
+              <ColumnCard title={'Roah Segare'} subtitle={'Kuranji Dalang, Lombok Timur'} img={require(rS)} color={'#93D564'} />
           </ScrollView>
         </View>
 
