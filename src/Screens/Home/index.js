@@ -5,6 +5,7 @@ import { Text, Button, Avatar } from '@rneui/themed'
 import SettingIcon from '../../Icons/Settings'
 import ListAksara from '../../components/ListAksara'
 import ContentTitle from '../../components/ContentTitle'
+import ColumnCard from '../../components/ColumnCard'
 
 const styles = StyleSheet.create({
   scrollView:{
@@ -64,6 +65,8 @@ const Home = () => {
   const aksaraUtama = '../../../assets/aksara/aksara_utama.png'
   const aksaraGantungan = '../../../assets/aksara/aksara_gantungan.png'
   const aksaraSandangan = '../../../assets/aksara/aksara_sandangan.png'
+  const reboBontong = '../../../assets/budaya/reboBontong.png'
+
   return (
     <ScrollView 
       showsVerticalScrollIndicator={false} 
@@ -109,6 +112,10 @@ const Home = () => {
 
         <View style={styles.sectionContainerColumn}>
           <ContentTitle judul={'Budaya dan Adat'} />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <ColumnCard title={'Upacara Rebo Bontong'} subtitle={'Pringgabaya, Lombok Timur'} img={require(reboBontong)} color={'#93D564'} />
+              <ColumnCard img={require(reboBontong)} color={'#93D564'} />
+          </ScrollView>
         </View>
 
     </ScrollView>
