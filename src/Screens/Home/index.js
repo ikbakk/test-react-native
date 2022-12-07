@@ -87,13 +87,7 @@ const Home = () => {
           />
         </View>
         <View style={styles.sectionContainer}>
-          <View style={styles.sectionTitle}>
-            <Text style={{fontSize:22}}>Aksara</Text>
-            <Button
-              title={<ForwardArrow size={18} />}
-              buttonStyle={styles.iconButton}
-            />
-          </View>
+
           <View style={{flexDirection:'column'}}>
             <ListAksara title={'Aksara Utama'} color={'#77BEF5'} img={require(aksaraUtama)} totalChar={'18 Karakter'} />
             <ListAksara title={'Aksara Gantungan'} color={'#CD5D58'} img={require(aksaraGantungan)} totalChar={'18 Karakter'} />
