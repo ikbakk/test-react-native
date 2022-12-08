@@ -4,7 +4,7 @@ import { Text, Button } from '@rneui/themed'
 
 import ForwardArrow from '../../Icons/ForwardArrow'
 
-const ContentTitle = ({judul}) => {
+const ContentTitle = ({judul, navigation, screen}) => {
   const styles = StyleSheet.create({
     sectionTitle:{
       fontSize:22, 
@@ -20,12 +20,17 @@ const ContentTitle = ({judul}) => {
     },
   })
 
+  const navigate = (a) => {
+    navigation.navigate(a)
+  }
+
   return (
     <View style={styles.sectionTitle}>
     <Text style={{fontSize:22}}>{judul}</Text>
     <Button
       title={<ForwardArrow size={18} />}
       buttonStyle={styles.iconButton}
+      onPress={() => navigate(screen)}
     />
   </View>
   )

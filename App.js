@@ -1,52 +1,33 @@
 import React, { Component } from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { StatusBar } from 'expo-status-bar'
 import { NavigationContainer } from '@react-navigation/native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import TabBarIconHome from './src/Icons/Home'
-import TabBarIconTerjemah from './src/Icons/Terjemah'
-import TabBarIconProfil from './src/Icons/Profil'
-
+import Aksara from './src/Screens/Aksara'
+import Budaya from './src/Screens/Budaya'
 import Home from './src/Screens/Home'
-import Terjemah from './src/Screens/Terjemah'
 import Profil from './src/Screens/Profil'
+import Terjemah from './src/Screens/Terjemah'
+import CeritaRakyat from './src/Screens/CeritaRakyat'
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
-  const Tab = createBottomTabNavigator()
+  
   return (
     <SafeAreaProvider>
-    <NavigationContainer>
-      <Tab.Navigator 
-
-        screenOptions={{ 
-          headerShown: false,
-          tabBarActiveTintColor: '#93D564',
-          tabBarStyle: {paddingHorizontal:40, paddingVertical:10},
-          tabBarLabelStyle: {fontSize:14}
-        }}>
-          <Tab.Screen 
-            name='Home'
-            options={{
-              tabBarIcon: ({color}) => <TabBarIconHome size={24} color={color} />
-            }}>
-              {() => <Home judul='Home' />}
-          </Tab.Screen>
-          <Tab.Screen 
-            name='Terjemah'
-            options={{
-              tabBarIcon: ({color}) => <TabBarIconTerjemah size={24} color={color} />
-            }}>
-              {() => <Terjemah />}
-          </Tab.Screen>
-          <Tab.Screen 
-            name='Profil'
-            options={{
-              tabBarIcon: ({color}) => <TabBarIconProfil size={24} color={color} />
-            }}>
-              {() => <Profil />}
-          </Tab.Screen>
-      </Tab.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <StatusBar translucent={true}></StatusBar>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='Profil' component={Profil} />
+          <Stack.Screen name='Terjemah' component={Terjemah} />
+          <Stack.Screen name='Aksara' component={Aksara} />
+          <Stack.Screen name='Budaya' component={Budaya} />
+          <Stack.Screen name='Cerita' component={CeritaRakyat} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
