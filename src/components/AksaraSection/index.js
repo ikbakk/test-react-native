@@ -36,6 +36,7 @@ const AksaraSection = ({navigation}) => {
         title={'Lihat Selengkapnya'}
         titleStyle={{color:'#ababab'}}
         buttonStyle={{backgroundColor: '#FFFFFF00', borderRadius:10}}
+        onPress={() => navigation.navigate('Aksara')}
       />
     </View>
   )
