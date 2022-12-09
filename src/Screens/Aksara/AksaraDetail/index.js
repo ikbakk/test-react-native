@@ -4,13 +4,14 @@ import { listAksara } from '../../../Util/ListAksara'
 import { Text } from '@rneui/themed'
 import { StyleSheet } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
 import SolidColorHeader from '../../../components/SolidColorHeader'
 import AksaraType from '../../../components/AksaraType'
 
 const AksaraDetail =() => {
-  const [color, setColor] = useState('#77BEF5')
+  const route = useRoute()
+  const [color, setColor] = useState(route.params.a)
   const [index, setIndex] = useState(0)
 
   const styles = StyleSheet.create({

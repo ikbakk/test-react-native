@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { View, Image, StyleSheet } from 'react-native'
 import { Text, Button } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 
-
 const RowCard = ({ title, img, color, totalChar}) => {
+  const [index, setIndex] = useState(0)
+
   const styles = StyleSheet.create({
     aksaraItem:{
       backgroundColor:`${color}`, 
@@ -27,6 +28,18 @@ const RowCard = ({ title, img, color, totalChar}) => {
       borderColor:'black', 
       resizeMode:'contain',
     },
+    
+    tab:{
+      fontSize:18,
+      paddingHorizontal:15,
+      color: color
+    },
+    
+    tab2:{
+      fontSize:18,
+      paddingHorizontal:15,
+      color:'black'
+    }
   })
 
   const navigation = useNavigation()
@@ -35,7 +48,7 @@ const RowCard = ({ title, img, color, totalChar}) => {
     <Button 
       buttonStyle={styles.aksaraItem}
       containerStyle={{padding:5}}
-      onPress={() => navigation.navigate('AksaraDetail')}
+      onPress={() => navigation.navigate('AksaraDetail', {screen: title.replace('Aksara ',''), a:`${color}`})}
       >
         <View style={{flexDirection:'row', alignItems:'center', }}>
           <Image 
