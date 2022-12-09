@@ -2,13 +2,13 @@ import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { listCerita } from '../../Util/ListCeritaRakyat'
 
-import MoreHeader from '../../components/MoreHeader'
+import SolidColorHeader from '../../components/SolidColorHeader'
 import ColumnCard from '../../components/ColumnCard'
 
 const CeritaRakyat = () => {
   return (
     <View style={{flexDirection:'column', flex:1}}>
-      <MoreHeader title={'Cerita Rakyat'} />
+      <SolidColorHeader color={'white'} title={'Cerita Rakyat'} />
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
       { listCerita.map((item,id) => { 
             return (

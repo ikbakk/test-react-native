@@ -3,8 +3,9 @@ import { View, StyleSheet } from 'react-native'
 import { Text, Button } from '@rneui/themed'
 
 import ForwardArrow from '../../Icons/ForwardArrow'
+import { useNavigation } from '@react-navigation/native'
 
-const ContentTitle = ({judul, navigation, screen}) => {
+const ContentTitle = ({judul, screen}) => {
   const styles = StyleSheet.create({
     sectionTitle:{
       fontSize:22, 
@@ -19,6 +20,8 @@ const ContentTitle = ({judul, navigation, screen}) => {
       backgroundColor: '#FFFFF00',
     },
   })
+
+  const navigation = useNavigation()
 
   const navigate = (a) => {
     navigation.navigate(a)

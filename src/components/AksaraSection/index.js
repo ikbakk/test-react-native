@@ -5,23 +5,25 @@ import { Button } from '@rneui/themed'
 
 import RowCard from '../RowCard'
 import ContentTitle from '../../components/ContentTitle'
+import { useNavigation } from '@react-navigation/native'
 
-const AksaraSection = ({navigation}) => {
+const AksaraSection = () => {
   const styles = StyleSheet.create({
     sectionContainer:{
       flexDirection:'column',
       paddingBottom:10,
     },
   })
-
+  const navigation = useNavigation()
+  
   const first3 = listAksara.slice(0, 3)
   return(
     <View style={styles.sectionContainer}>
-      <ContentTitle navigation={navigation} screen={'Aksara'} judul={'Aksara'} />
+      <ContentTitle screen={'Aksara'} judul={'Aksara'} />
       <View style={{flexDirection:'column'}}>
         { first3.map((item,id) => { 
             return (
-              <RowCard 
+              <RowCard
                 key={id}
                 title={item.title} 
                 color={item.color} 

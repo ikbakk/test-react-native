@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Aksara from './src/Screens/Aksara'
+import AksaraDetail from './src/Screens/Aksara/AksaraDetail'
 import Budaya from './src/Screens/Budaya'
 import CeritaRakyat from './src/Screens/CeritaRakyat'
 import EditProfil from './src/Screens/EditProfil'
@@ -26,6 +27,7 @@ export default function App() {
           <Stack.Screen name='Profil' component={Profil} />
           <Stack.Screen name='Terjemah' component={Terjemah} />
           <Stack.Screen name='Aksara' component={Aksara} />
+          <Stack.Screen name='AksaraDetail' component={AksaraDetail} />
           <Stack.Screen name='Budaya' component={Budaya} />
           <Stack.Screen name='Cerita' component={CeritaRakyat} />
           <Stack.Screen name='EditProfil' component={EditProfil} />

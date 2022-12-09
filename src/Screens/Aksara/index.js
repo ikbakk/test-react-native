@@ -2,14 +2,14 @@ import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { listAksara } from '../../Util/ListAksara'
 
-import MoreHeader from '../../components/MoreHeader'
+import SolidColorHeader from '../../components/SolidColorHeader'
 import RowCard from '../../components/RowCard'
 
 function Aksara() {
   return (
-    <View>
-      <MoreHeader title={'Aksara'}/>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{paddingHorizontal:15}}>
+    <View style={{flexDirection:'column', flex:1}}>
+      <SolidColorHeader color={'white'} title={'Aksara'}/>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
       { listAksara.map((item,id) => { 
             return (
               <RowCard 

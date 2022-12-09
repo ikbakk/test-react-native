@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Image, StyleSheet } from 'react-native'
 import { Text, Button } from '@rneui/themed'
+import { useNavigation } from '@react-navigation/native'
 
 
 const RowCard = ({ title, img, color, totalChar}) => {
@@ -28,10 +29,13 @@ const RowCard = ({ title, img, color, totalChar}) => {
     },
   })
 
+  const navigation = useNavigation()
+
   return (
     <Button 
       buttonStyle={styles.aksaraItem}
       containerStyle={{padding:5}}
+      onPress={() => navigation.navigate('AksaraDetail')}
       >
         <View style={{flexDirection:'row', alignItems:'center', }}>
           <Image 

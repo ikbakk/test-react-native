@@ -5,7 +5,7 @@ import { listBudaya } from '../../Util/ListBudaya'
 import ColumnCard from '../ColumnCard'
 import ContentTitle from '../ContentTitle'
 
-const BudayaSection = ({navigation}) => {
+const BudayaSection = () => {
   const styles = StyleSheet.create({
     sectionContainerColumn:{
       flexDirection:'column',
@@ -14,9 +14,10 @@ const BudayaSection = ({navigation}) => {
   })
 
   const first3 = listBudaya.slice(0, 3)
+  
   return (
     <View style={styles.sectionContainerColumn}>
-      <ContentTitle navigation={navigation} screen={'Budaya'} judul={'Budaya dan Adat'} />
+      <ContentTitle screen={'Budaya'} judul={'Budaya dan Adat'} />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       { first3.map((item,id) => { 
             return (

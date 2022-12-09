@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from '@rneui/themed'
 
-function MoreHeader({title}) {
+function SolidColorHeader({title, color}) {
   return (
     <Header 
         statusBarProps={{translucent:true, backgroundColor:'#fff0'}}
@@ -12,11 +12,11 @@ function MoreHeader({title}) {
             fontSize:28
         }}}
         containerStyle={{
-          backgroundColor:'white',
+          backgroundColor:color,
           height:120,
         }}
     />
   )
 }
 
-export default MoreHeader
+export default SolidColorHeader

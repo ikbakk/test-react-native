@@ -2,14 +2,14 @@ import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { listBudaya } from '../../Util/ListBudaya'
 
-import MoreHeader from '../../components/MoreHeader'
+import SolidColorHeader from '../../components/SolidColorHeader'
 import ColumnCard from '../../components/ColumnCard'
 
 const Budaya = () => {
   return (
-    <View>
-      <MoreHeader title={'Budaya dan Adat'} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{paddingHorizontal:15}}>
+    <View style={{flexDirection:'column', flex:1}}>
+      <SolidColorHeader color={'white'} title={'Budaya dan Adat'} />
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
       { listBudaya.map((item,id) => { 
             return (
               <ColumnCard

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { View, StyleSheet, ScrollView } from 'react-native'
 import { listCerita } from '../../Util/ListCeritaRakyat'
@@ -5,7 +6,7 @@ import { listCerita } from '../../Util/ListCeritaRakyat'
 import ColumnCard from '../ColumnCard'
 import ContentTitle from '../ContentTitle'
 
-const BudayaSection = ({navigation}) => {
+const BudayaSection = () => {
   const styles = StyleSheet.create({
     sectionContainerColumn:{
       flexDirection:'column',
@@ -14,9 +15,10 @@ const BudayaSection = ({navigation}) => {
   })
 
   const first3 = listCerita.slice(0, 3)
+  
   return (
     <View style={styles.sectionContainerColumn}>
-      <ContentTitle navigation={navigation} screen={'Cerita'} judul={'Cerita Rakyat'} />
+      <ContentTitle screen={'Cerita'} judul={'Cerita Rakyat'} />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       { first3.map((item,id) => { 
             return (
