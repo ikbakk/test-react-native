@@ -88,6 +88,7 @@ const Home = ({navigation}) => {
             <Button
               title={<SettingIcon size={22} />}
               buttonStyle={styles.iconButton}
+              onPress={() => navigate('EditProfil')}
             />
           </View>
     )
@@ -95,12 +96,12 @@ const Home = ({navigation}) => {
 
   return (
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:60}} style={styles.scrollView}>
-          <Header navigation={navigate} />
-          <Text style={styles.titleApp} >{`Mari Belajar\nMuatan Lokal!`}</Text>
-          <Terjemahkan navigation={navigate} />
-          <AksaraSection navigation={navigation} />
-          <BudayaSection navigation={navigation} />
-          <CeritaRakyatSection navigation={navigation} />
+        <Header navigation={navigate} />
+        <Text style={styles.titleApp} >{`Mari Belajar\nMuatan Lokal!`}</Text>
+        <Terjemahkan navigation={navigate} />
+        <AksaraSection navigation={navigation} />
+        <BudayaSection navigation={navigation} />
+        <CeritaRakyatSection navigation={navigation} />
       </ScrollView>
   )
 }
