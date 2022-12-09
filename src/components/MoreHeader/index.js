@@ -13,7 +13,7 @@ function MoreHeader({title}) {
         }}}
         containerStyle={{
           backgroundColor:'white',
-          height:120
+          height:120,
         }}
     />
   )

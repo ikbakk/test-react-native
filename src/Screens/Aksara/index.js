@@ -1,19 +1,15 @@
 import React from 'react'
-import { View, ScrollView, StyleSheet} from 'react-native'
+import { View, ScrollView } from 'react-native'
 import { listAksara } from '../../Util/ListAksara'
 
 import MoreHeader from '../../components/MoreHeader'
 import RowCard from '../../components/RowCard'
 
-const styles = StyleSheet.create({
-a:{}
-})
-
 function Aksara() {
   return (
     <View>
       <MoreHeader title={'Aksara'}/>
-      <ScrollView style={{paddingHorizontal:15}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{paddingHorizontal:15}}>
       { listAksara.map((item,id) => { 
             return (
               <RowCard 
