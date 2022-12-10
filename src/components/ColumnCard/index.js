@@ -1,9 +1,10 @@
 import React from 'react'
 import { View, Image, StyleSheet } from 'react-native'
 import { Text, Button } from '@rneui/themed'
+import { useNavigation } from '@react-navigation/native'
 
 
-const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidth}) => {
+const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidth, detail}) => {
   const styles = StyleSheet.create({
     button:{
       backgroundColor:`${color}`, 
@@ -26,10 +27,12 @@ const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidt
     },
   })
 
+  const nav = useNavigation()
   return (
     <Button 
       buttonStyle={styles.button}
       containerStyle={{padding:5}}
+      onPress={() => nav.navigate('CardDetail', {img:img, title:title, subtitle:subtitle, detail:detail})}
       >
         <View style={{flexDirection:'column', alignItems:'center'}}>
           <Image 

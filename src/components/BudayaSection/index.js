@@ -28,6 +28,7 @@ const BudayaSection = () => {
                 img={item.img} 
                 color={item.color} 
                 height={180}
+                detail={item.detail}
               /> 
             )
           })

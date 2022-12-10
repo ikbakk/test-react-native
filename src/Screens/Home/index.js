@@ -1,11 +1,17 @@
 import React from 'react'
 import { View, StyleSheet, ScrollView } from 'react-native'
 import { Text, Button, Avatar } from '@rneui/themed'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import SettingIcon from '../../Icons/Settings'
 import AksaraSection from '../../components/AksaraSection'
+import AksaraDetail from '../Aksara/AksaraDetail'
+import Aksara from '../Aksara'
+import Budaya from '../Budaya'
 import BudayaSection from '../../components/BudayaSection'
 import CeritaRakyatSection from '../../components/CeritaRakyatSection'
+import CeritaRakyat from '../CeritaRakyat'
+import EditProfil from '../EditProfil'
 
 
 const styles = StyleSheet.create({
@@ -58,12 +64,13 @@ const styles = StyleSheet.create({
 })
 
 const Home = ({navigation}) => {
+  const homeStack = createNativeStackNavigator()
 
   const navigate = (screen) => {
     navigation.navigate(screen)
   }
 
-  const Terjemahkan = ({navigation}) => {
+  const Terjemahkan = () => {
     return (
       <View style={styles.sectionContainer} >
         <Text style={styles.sectionTitle}>Coba Terjemahkan Kata</Text>
@@ -76,7 +83,7 @@ const Home = ({navigation}) => {
     )
   }
 
-  const Header = ({navigation}) => {
+  const Header = () => {
     return (
           <View style={styles.header}>
             <Button
@@ -96,12 +103,12 @@ const Home = ({navigation}) => {
 
   return (
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:60}} style={styles.scrollView}>
-        <Header navigation={navigate} />
+        <Header />
         <Text style={styles.titleApp} >{`Mari Belajar\nMuatan Lokal!`}</Text>
-        <Terjemahkan navigation={navigate} />
-        <AksaraSection navigation={navigation} />
-        <BudayaSection navigation={navigation} />
-        <CeritaRakyatSection navigation={navigation} />
+        <Terjemahkan />
+        <AksaraSection />
+        <BudayaSection />
+        <CeritaRakyatSection />
       </ScrollView>
   )
 }

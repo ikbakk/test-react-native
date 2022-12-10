@@ -31,6 +31,7 @@ const BudayaSection = () => {
                 height={210}
                 pHeight={120}
                 pWidth={180}
+                detail={item.detail}
               /> 
             )
           })

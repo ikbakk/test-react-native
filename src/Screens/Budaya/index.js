@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { listBudaya } from '../../Util/ListBudaya'
+import { Text } from '@rneui/themed'
+import { useNavigation } from '@react-navigation/native'
 
 import SolidColorHeader from '../../components/SolidColorHeader'
 import ColumnCard from '../../components/ColumnCard'
@@ -23,6 +25,7 @@ const Budaya = () => {
                 pWidth={280}
                 pHeight={90}
                 tWidth={280}
+                detail={item.detail}
               /> 
             )
           })

@@ -49,6 +49,7 @@ const RowCard = ({ title, img, color, totalChar}) => {
       buttonStyle={styles.aksaraItem}
       containerStyle={{padding:5}}
       onPress={() => navigation.navigate('AksaraDetail', {screen: title.replace('Aksara ',''), a:`${color}`})}
+      // onPress={() => navigation.navigate('Profil')}
       >
         <View style={{flexDirection:'row', alignItems:'center', }}>
           <Image 

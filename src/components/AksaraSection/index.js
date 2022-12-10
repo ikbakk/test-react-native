@@ -2,12 +2,10 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { listAksara } from '../../Util/ListAksara'
 import { Button } from '@rneui/themed'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
 
 import RowCard from '../RowCard'
 import ContentTitle from '../../components/ContentTitle'
-import AksaraType from '../AksaraType'
 
 const AksaraSection = () => {
   const styles = StyleSheet.create({
@@ -17,8 +15,6 @@ const AksaraSection = () => {
     },
   })
   const navigation = useNavigation()
-  
-  const aksaraStack = createNativeStackNavigator()
 
   const first3 = listAksara.slice(0, 3)
   return(

@@ -23,6 +23,7 @@ const CeritaRakyat = () => {
                 pWidth={280}
                 pHeight={120}
                 tWidth={280}
+                detail={item.detail}
               /> 
             )
           })
