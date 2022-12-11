@@ -18,6 +18,8 @@ function Aksara() {
                 color={item.color} 
                 img={item.img} 
                 totalChar={item.totalChar} 
+                item={item}
+                urutan={urutan}
               /> 
             )
           })

@@ -12,7 +12,7 @@ import AksaraType from '../../../components/AksaraType'
 const AksaraDetail =() => {
   const route = useRoute()
   const [color, setColor] = useState(route.params.a)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(route.params.b-1)
 
   const styles = StyleSheet.create({
     tab:{

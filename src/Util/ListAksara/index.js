@@ -1,12 +1,14 @@
 export const listAksara = [
   {
+    urutan: 1,
     title: 'Aksara Utama',
     color: '#77BEF5',
     img: `${require('../../../assets/aksara/aksara_utama.png')}`,
     totalChar: '18 Karakter',
     describe:'penjelasan',
-  },    
+  },
   {
+    urutan: 2,
     title: 'Aksara Gantungan',
     color: '#CD5D58',
     img: `${require('../../../assets/aksara/aksara_gantungan.png')}`,      
@@ -14,6 +16,7 @@ export const listAksara = [
     describe:'penjelasan',
   },
   {
+    urutan: 3,
     title: 'Aksara Sandangan',
     color: '#FCBE7E',
     img: `${require('../../../assets/aksara/aksara_sandangan.png')}`,
@@ -21,6 +24,7 @@ export const listAksara = [
     describe:'penjelasan',
   },
   {
+    urutan: 4,
     title: 'Aksara Angka',
     color: '#FCBE7E',
     img: `${require('../../../assets/aksara/aksara_sandangan.png')}`,
@@ -28,6 +32,7 @@ export const listAksara = [
     describe:'penjelasan',
   },
   {
+    urutan: 5,
     title: 'Aksara Sserapan',
     color: '#FCBE7E',
     img: `${require('../../../assets/aksara/aksara_sandangan.png')}`,

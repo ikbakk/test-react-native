@@ -29,6 +29,7 @@ const AksaraSection = () => {
                 color={item.color} 
                 img={item.img} 
                 totalChar={item.totalChar} 
+                urutan={item.urutan}
               /> 
             )
           })
