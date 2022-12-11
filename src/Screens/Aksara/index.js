@@ -19,7 +19,7 @@ function Aksara() {
                 img={item.img} 
                 totalChar={item.totalChar} 
                 item={item}
-                urutan={urutan}
+                urutan={item.urutan}
               /> 
             )
           })
