@@ -9,7 +9,7 @@ function SolidColorHeader({title, color, target}) {
     return (
     <Pressable 
       style={{ backgroundColor:'#FFF0', width:30, height:30, flexDirection:'row', justifyContent:'space-between', borderRadius:20}} 
-      onPress={() => nav.navigate(target)}
+      onPress={() => nav.navigate('HomeAwal', {screen:target})}
       on  
     >
         <Icon style={{left:8, top:2}} name='arrow-back-ios' />
@@ -18,7 +18,7 @@ function SolidColorHeader({title, color, target}) {
 
   return (
     <Header 
-        statusBarProps={{translucent:true, backgroundColor:'#fff0'}}
+        statusBarProps={{translucent:true, backgroundColor:'#0000004D'}}
         centerComponent={{
           text:title, 
           style:{
