@@ -11,7 +11,7 @@ const Budaya = () => {
   return (
     <View style={{flexDirection:'column', flex:1}}>
       <SolidColorHeader color={'white'} title={'Budaya dan Adat'} target={'Home'} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15, marginBottom:50}}>
       { listBudaya.map((item,id) => { 
             return (
               <ColumnCard

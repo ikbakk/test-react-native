@@ -9,7 +9,7 @@ function Aksara() {
   return (
     <View style={{flexDirection:'column', flex:1}}>
       <SolidColorHeader color={'white'} title={'Aksara'}/>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15, marginBottom:50}}>
       { listAksara.map((item,id) => { 
             return (
               <RowCard 

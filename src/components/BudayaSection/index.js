@@ -18,7 +18,7 @@ const BudayaSection = () => {
   return (
     <View style={styles.sectionContainerColumn}>
       <ContentTitle screen={'Budaya'} judul={'Budaya dan Adat'} />
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView style={{paddingLeft:20}} horizontal showsHorizontalScrollIndicator={false}>
       { first3.map((item,id) => { 
             return (
               <ColumnCard 

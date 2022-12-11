@@ -13,7 +13,7 @@ const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidt
       borderWidth:2,
       borderColor:'black',
       flexDirection:'row',
-      justifyContent:'space-around'
+      justifyContent:'space-around',
     },
 
     img:{

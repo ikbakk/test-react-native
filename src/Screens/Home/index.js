@@ -17,7 +17,7 @@ import TabBarIconTerjemah from '../../Icons/Terjemah'
 
 const styles = StyleSheet.create({
   scrollView:{
-    paddingHorizontal:30, 
+    // paddingHorizontal:30, 
     paddingTop:50,
     marginBottom:50
   },
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     alignItems:'center',
     height:100,
+    paddingHorizontal:20
   },
 
   avatar:{
@@ -48,20 +49,19 @@ const styles = StyleSheet.create({
     marginVertical:30, 
     lineHeight:50, 
     fontSize:48,
+    paddingHorizontal:20
   },
 
   sectionTitle:{
     fontSize:22, 
     marginBottom:15,
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    marginBottom:15,
+    paddingHorizontal:5
   },
-  
+
   sectionContainer:{
     flexDirection:'column',
     paddingBottom:30,
+    paddingHorizontal:25
   },
 })
 
@@ -94,7 +94,7 @@ const Home = ({navigation}) => {
               buttonStyle={styles.avatar}
               onPress={() => navigate('Profil')}
             />
-            <Text style={styles.name}>Hai, Rafly Junizar!</Text>
+            <Text style={styles.name}>Hai, Rafly Junizar Kontlo!</Text>
             <Button
               title={<SettingIcon size={22} />}
               buttonStyle={styles.iconButton}

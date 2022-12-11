@@ -20,7 +20,7 @@ const AksaraSection = () => {
   return(
     <View style={styles.sectionContainer}>
       <ContentTitle screen={'Aksara'} judul={'Aksara'} />
-      <View style={{flexDirection:'column'}}>
+      <View style={{flexDirection:'column', paddingHorizontal:20}}>
         { first3.map((item,id) => { 
             return (
               <RowCard

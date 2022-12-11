@@ -14,6 +14,7 @@ const ContentTitle = ({judul, screen}) => {
       justifyContent:'space-between',
       alignItems:'center',
       marginBottom:15,
+      paddingHorizontal:30,
     },
 
     iconButton:{
