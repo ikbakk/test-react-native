@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { View, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import { View, ScrollView, Pressable } from 'react-native'
 import { listAksara } from '../../../Util/ListAksara'
 import { Text } from '@rneui/themed'
 import { StyleSheet } from 'react-native'
@@ -35,7 +35,7 @@ const AksaraDetail =() => {
 
   return (
     <View style={{flex:1}}>
-      <SolidColorHeader color={color} title={'Aksara'} />
+      <SolidColorHeader color={color} title={'Aksara'} target={'Home'} />
       <View style={{padding:10}}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
         {listAksara.map((item, id) => {
@@ -54,7 +54,11 @@ const AksaraDetail =() => {
       <aksaraStack.Navigator screenOptions={{headerShown: false, animation:'slide_from_right'}}>
       {listAksara.map((item, id) => {
         return (
-        <aksaraStack.Screen key={id} name={item.title.replace('Aksara ','')} children={() => <AksaraType title={item.title} describe={item.describe} />} />
+          <aksaraStack.Screen
+            key={id} 
+            name={item.title.replace('Aksara ','')} 
+            children={() => <AksaraType title={item.title} describe={item.describe} />}
+          />
         )
       })}
       </aksaraStack.Navigator>

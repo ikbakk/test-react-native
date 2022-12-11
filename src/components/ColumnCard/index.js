@@ -4,7 +4,7 @@ import { Text, Button } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 
 
-const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidth, detail}) => {
+const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidth, detail, target}) => {
   const styles = StyleSheet.create({
     button:{
       backgroundColor:`${color}`, 
@@ -32,7 +32,7 @@ const ColumnCard = ({img, color, title, subtitle, height, pWidth, pHeight, tWidt
     <Button 
       buttonStyle={styles.button}
       containerStyle={{padding:5}}
-      onPress={() => nav.navigate('CardDetail', {img:img, title:title, subtitle:subtitle, detail:detail})}
+      onPress={() => nav.navigate('CardDetail', {img:img, title:title, subtitle:subtitle, detail:detail, target:target})}
       >
         <View style={{flexDirection:'column', alignItems:'center'}}>
           <Image 

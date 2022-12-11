@@ -1,11 +1,24 @@
 import React from 'react'
-import { Header } from '@rneui/themed'
+import { Header, Icon } from '@rneui/themed'
+import { Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-function SolidColorHeader({title, color}) {
+function SolidColorHeader({title, color, target}) {
+  const nav = useNavigation()
+  const IconA = () => {
+    return (
+    <Pressable 
+      style={{ backgroundColor:'#FFF0', width:30, height:30, flexDirection:'row', justifyContent:'space-between', borderRadius:20}} 
+      onPress={() => nav.navigate(target)}
+      on  
+    >
+        <Icon style={{left:8, top:2}} name='arrow-back-ios' />
+    </Pressable>
+  )}
+
   return (
     <Header 
         statusBarProps={{translucent:true, backgroundColor:'#fff0'}}
-        leftComponent={{icon:'arrow-back'}}
         centerComponent={{
           text:title, 
           style:{
@@ -15,7 +28,9 @@ function SolidColorHeader({title, color}) {
           backgroundColor:color,
           height:120,
         }}
-    />
+    >
+      <IconA />
+    </Header>
   )
 }
 

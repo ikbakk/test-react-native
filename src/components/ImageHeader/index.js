@@ -1,7 +1,7 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import { Header, Text } from '@rneui/themed'
-import '../../../assets/budaya/nyale.png'
+import React, { useState } from 'react'
+import { View, StyleSheet, Pressable } from 'react-native'
+import { Header, Text, Icon } from '@rneui/themed'
+import { useNavigation } from '@react-navigation/native'
 
 const style = StyleSheet.create({
   judul:{
@@ -14,7 +14,7 @@ const style = StyleSheet.create({
   }
 })
 
-function ImageHeader({title, subJudul, img}) {
+function ImageHeader({ title, subJudul, img, target }) {
 
   const Judul = () => (
     <View style={{flexDirection:'column', marginLeft:-15,}}>
@@ -26,21 +26,27 @@ function ImageHeader({title, subJudul, img}) {
       </View>
     </View>
   )
+  
+  const nav = useNavigation()
+
+  const IconA = () => {
+    return (
+    <Pressable 
+    style={{ backgroundColor:'white', width:30, height:30, flexDirection:'row', justifyContent:'space-between', borderRadius:20}} 
+    onPress={() => nav.goBack()}>
+      <Icon style={{left:8, top:2}} name='arrow-back-ios' />
+    </Pressable>
+  )}
+
   return (
     <View style={{borderColor:'black', borderWidth:3, borderRadius:10}}>
     <Header 
         statusBarProps={{translucent:true, backgroundColor:'#0000004D'}}
-        leftComponent={{icon:'arrow-back'}}
         leftContainerStyle={{
-          backgroundColor:'white',
-          borderRadius:30,
-          width:25,
-          height:25,
           bottom:20,
           left:15,
         }}
         placement='left'
-        centerComponent={Judul}
         centerContainerStyle={{
           width:200,
           height:110,
@@ -58,7 +64,10 @@ function ImageHeader({title, subJudul, img}) {
           backgroundColor:'#FFFFFF00',
           borderRadius:9,
         }}
-    />
+    >
+      <IconA />
+      <Judul />
+    </Header>
     </View>
   )
 }

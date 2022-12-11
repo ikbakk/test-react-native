@@ -10,7 +10,7 @@ import ColumnCard from '../../components/ColumnCard'
 const Budaya = () => {
   return (
     <View style={{flexDirection:'column', flex:1}}>
-      <SolidColorHeader color={'white'} title={'Budaya dan Adat'} />
+      <SolidColorHeader color={'white'} title={'Budaya dan Adat'} target={'Home'} />
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:30}} style={{padding:15}}>
       { listBudaya.map((item,id) => { 
             return (
