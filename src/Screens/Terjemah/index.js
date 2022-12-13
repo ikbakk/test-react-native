@@ -1,8 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, StatusBar } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
+import { Text } from "@rneui/themed";
+
 import SolidColorHeader from "../../components/SolidColorHeader";
 
-function Terjemah() {
+function Terjemah({ color }) {
   const styles = StyleSheet.create({
     scrollView: {
       paddingTop: 20,
@@ -12,14 +14,15 @@ function Terjemah() {
       borderWidth: 1,
     },
   });
+
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <SolidColorHeader title="Terjemahan" color="#93D564" />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
         style={styles.scrollView}>
-        <Text style={styles.titleApp}>{`Mari Belajar\nMuatan Lokal!`}</Text>
+        <Text style={styles.titleApp}>{color}</Text>
       </ScrollView>
     </View>
   );
