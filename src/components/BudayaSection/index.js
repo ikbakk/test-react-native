@@ -19,6 +19,7 @@ const BudayaSection = () => {
     <View style={styles.sectionContainerColumn}>
       <ContentTitle screen={"Budaya"} judul={"Budaya dan Adat"} />
       <ScrollView
+        contentContainerStyle={{ paddingRight: 40 }}
         style={{ paddingLeft: 20 }}
         horizontal
         showsHorizontalScrollIndicator={false}>
