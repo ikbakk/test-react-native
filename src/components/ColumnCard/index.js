@@ -22,76 +22,41 @@ const ColumnCard = ({
       borderRadius: 10,
       borderWidth: 2,
       borderColor: "black",
-      flexDirection: "row",
-      flex: 3,
+      margin: 5,
     },
 
     img: {
-      width: undefined,
+      width: pWidth,
       height: pHeight,
       borderWidth: 1,
       borderRadius: 10,
       borderColor: "black",
       margin: 15,
-      // resizeMode: "cover",
+    },
+    text: {
+      marginLeft: 15,
+      flex: 1,
     },
   });
 
   const nav = useNavigation();
   return (
-    // <Button
-    //   buttonStyle={styles.button}
-    //   containerStyle={{ paddingVertical: 5 }}
-    //   onPress={() =>
-    //     nav.navigate("CardDetail", {
-    //       img: img,
-    //       title: title,
-    //       subtitle: subtitle,
-    //       detail: detail,
-    //       target: target,
-    //     })
-    //   }>
-    //   <View
-    //     style={{
-    //       alignItems: "center",
-    //     }}>
-    //     <Image source={img} style={styles.img} />
-    // <View
-    //   style={{
-    //     paddingTop: 10,
-    //     flexDirection: "column",
-    //     flex: 1,
-
-    //     // width: tWidth ? tWidth : 180,
-    //   }}>
-    //       <Text style={{ fontSize: 22, color: "#ffffff" }}>{title}</Text>
-    //       <Text style={{ fontSize: 16, color: "#ffffff" }}>{subtitle}</Text>
-    //     </View>
-    //   </View>
-    // </Button>
-    <Pressable>
-      <Button buttonStyle={styles.button}>
-        <View style={{ flex: 1 }}>
-          <Image
-            style={{
-              width: undefined,
-              height: pHeight,
-              margin: 15,
-              resizeMode: "cover",
-            }}
-            source={img}
-          />
-        </View>
-        <View
-          style={{
-            paddingTop: 10,
-            flexDirection: "column",
-            flex: 1,
-          }}>
-          <Text style={{ fontSize: 22, color: "#ffffff" }}>{title}</Text>
-          <Text style={{ fontSize: 16, color: "#ffffff" }}>{subtitle}</Text>
-        </View>
-      </Button>
+    <Pressable
+      onPress={() =>
+        nav.navigate("CardDetail", {
+          img: img,
+          title: title,
+          subtitle: subtitle,
+          detail: detail,
+          target: target,
+        })
+      }
+      style={styles.button}>
+      <Image style={styles.img} source={img} />
+      <View style={styles.text}>
+        <Text style={{ fontSize: 22, color: "#ffffff" }}>{title}</Text>
+        <Text style={{ fontSize: 16, color: "#ffffff" }}>{subtitle}</Text>
+      </View>
     </Pressable>
   );
 };
