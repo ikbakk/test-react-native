@@ -1,14 +1,14 @@
-import React from "react";
-import { View, ScrollView } from "react-native";
-import { listAksara } from "../../Util/ListAksara";
+import React from 'react'
+import { View, ScrollView } from 'react-native'
+import { listAksara } from '../../Util/ListAksara'
 
-import SolidColorHeader from "../../components/SolidColorHeader";
-import RowCard from "../../components/RowCard";
+import SolidColorHeader from '../../components/SolidColorHeader'
+import RowCard from '../../components/RowCard'
 
 function Aksara() {
   return (
-    <View style={{ flexDirection: "column", flex: 1 }}>
-      <SolidColorHeader color={"white"} title={"Aksara"} />
+    <View style={{ flexDirection: 'column', flex: 1 }}>
+      <SolidColorHeader target={'Home'} color={'white'} title={'Aksara'} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 30 }}
@@ -24,10 +24,10 @@ function Aksara() {
               item={item}
               urutan={item.urutan}
             />
-          );
+          )
         })}
       </ScrollView>
     </View>
-  );
+  )
 }
-export default Aksara;
+export default Aksara
