@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   swapIcon: {
-    marginHorizontal: 5
+    marginHorizontal: 5,
+    marginVertical: 20
   },
   translateBox: {
     flex: 1,
@@ -75,52 +76,58 @@ const styles = StyleSheet.create({
   }
 })
 
-const TranslateBoxTitle = ({ bahasaSwap }) => {
-  return (
-    <View style={styles.textAreaTitle}>
-      <Text style={styles.textTitle}>Diterjemahkan dari</Text>
-      <Text style={styles.textTitleBahasa}>{bahasaSwap}</Text>
-    </View>
-  )
-}
+const TranslateBox = ({ params, boolean }) => {
+  const {
+    sasak,
+    textInput,
+    textOutput,
+    setTextInput,
+    setTextOutput,
+    kata,
+    bahasaSwap,
+    clearHandle
+  } = params
 
-const TranslateBox = ({
-  textInput,
-  setTextInput,
-  bahasaSwap,
-  clear,
-  setTextOutput,
-  output,
-  kata,
-  sasak
-}) => {
   const getKeyByValue = (object, value) => {
-    return Object.keys(object).find((key) => object[key] === value)
+    const result = Object.keys(object).find((key) => object[key] === value)
+    if (result !== undefined) {
+      return result
+    } else {
+      return 'Tidak ada kata'
+    }
   }
 
-  const translatedInput =
+  const idToSasak =
     typeof kata[textInput.toLowerCase()] == 'string'
-      ? kata[textInput.toLowerCase()]
-      : 'tidak ada kata'
+      ? kata[textInput.toLowerCase()].charAt(0).toUpperCase() +
+        kata[textInput.toLowerCase()].slice(1)
+      : 'Tidak ada kata'
 
-  const capitalizedOutput2 =
-    getKeyByValue(kata, translatedInput).charAt(0).toUpperCase() +
-    getKeyByValue(kata, translatedInput).slice(1)
-
-  const capitalizedOutput =
-    translatedInput.charAt(0).toUpperCase() + translatedInput.slice(1)
+  const sasakToId =
+    getKeyByValue(kata, textOutput.toLowerCase()).charAt(0).toUpperCase() +
+    getKeyByValue(kata, textOutput.toLowerCase()).slice(1)
 
   const sendHandle = () => {
-    setTextOutput(sasak === true ? capitalizedOutput : capitalizedOutput2)
+    setTextOutput(idToSasak)
   }
-  console.log(translatedInput, getKeyByValue(kata, translatedInput))
+  const TranslateBoxTitle = () => {
+    return (
+      <View style={styles.textAreaTitle}>
+        <Text style={styles.textTitle}>Diterjemahkan dari</Text>
+        <Text style={styles.textTitleBahasa}>{bahasaSwap(boolean)}</Text>
+      </View>
+    )
+  }
+  console.log(idToSasak.length)
   return (
     <View style={styles.translateBox}>
-      <TranslateBoxTitle bahasaSwap={bahasaSwap} />
+      <TranslateBoxTitle />
       <View style={styles.textInputContainer}>
         <View style={styles.textInputValue}>
-          <Text style={{ fontSize: 24 }}>{output}</Text>
-          <XIcon pressIconHandle={clear} size={20} />
+          <Text style={{ fontSize: 24 }}>
+            {sasak === boolean ? sasakToId : textOutput}
+          </Text>
+          <XIcon pressIconHandle={clearHandle} size={20} />
         </View>
         <Input
           containerStyle={{
@@ -128,11 +135,13 @@ const TranslateBox = ({
             justifyContent: 'flex-end'
           }}
           clearTextOnFocus={true}
-          errorMessage={`${textInput.length} / 500`}
+          errorMessage={`${
+            sasak === boolean ? idToSasak.length : textInput.length
+          } / 500`}
           errorStyle={{ color: 'black' }}
           maxLength={500}
           onChangeText={(newText) => setTextInput(newText)}
-          defaultValue={textInput}
+          defaultValue={sasak === boolean ? idToSasak : sasakToId}
           placeholder='Masukkan kata'
           rightIcon={<Icon onPress={sendHandle} name='send' type='material' />}
         />
@@ -141,25 +150,10 @@ const TranslateBox = ({
   )
 }
 
-const LangContainter = ({ bahasaSwap }) => {
-  return (
-    <View style={styles.langCont}>
-      <View>
-        <View style={styles.imageCont}>
-          <Image
-            style={styles.image}
-            source={require('../../../assets/aksara/aksara_utama.png')}></Image>
-        </View>
-      </View>
-      <Text style={styles.langText}>{bahasaSwap}</Text>
-    </View>
-  )
-}
-
 function Terjemah() {
   const [sasak, setSasak] = useState(true)
   const [textInput, setTextInput] = useState('')
-  const [textOutput, setTextOutput] = useState('')
+  const [textOutput, setTextOutput] = useState('Tidak ada kata')
 
   const bahasaSwap = (bool) => {
     const bahasa = sasak === bool ? 'Sasak' : 'Bahasa Indonesia'
@@ -174,6 +168,31 @@ function Terjemah() {
     setTextOutput('')
     setTextInput('')
   }
+  const params = {
+    sasak: sasak,
+    textInput: textInput,
+    textOutput: textOutput,
+    setTextInput: setTextInput,
+    setTextOutput: setTextOutput,
+    kata: kata,
+    bahasaSwap: bahasaSwap,
+    clearHandle: clearHandle
+  }
+
+  const LangContainter = ({ bool }) => {
+    return (
+      <View style={styles.langCont}>
+        <View>
+          <View style={styles.imageCont}>
+            <Image
+              style={styles.image}
+              source={require('../../../assets/aksara/aksara_utama.png')}></Image>
+          </View>
+        </View>
+        <Text style={styles.langText}>{bahasaSwap(bool)}</Text>
+      </View>
+    )
+  }
 
   return (
     <View style={{ flex: 1 }}>
@@ -183,24 +202,16 @@ function Terjemah() {
         contentContainerStyle={{ paddingBottom: 50 }}
         style={styles.scrollView}>
         <View style={styles.langContWrap}>
-          <LangContainter bahasaSwap={bahasaSwap(false)} sasak={sasak} />
+          <LangContainter bool={true} />
           <SwapIcon
             pressIconHandle={swapHandle}
             styles={styles.swapIcon}
             size={22}
           />
-          <LangContainter bahasaSwap={bahasaSwap(true)} sasak={sasak} />
+          <LangContainter bool={false} />
         </View>
-        <TranslateBox
-          sasak={sasak}
-          kata={kata}
-          output={textOutput}
-          setTextOutput={setTextOutput}
-          clear={clearHandle}
-          bahasaSwap={bahasaSwap(false)}
-          textInput={textInput}
-          setTextInput={setTextInput}
-        />
+        <TranslateBox params={params} boolean={true} />
+        <TranslateBox params={params} boolean={false} />
       </ScrollView>
     </View>
   )
