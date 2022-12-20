@@ -118,7 +118,7 @@ const TranslateBox = ({ params, boolean }) => {
       </View>
     )
   }
-  console.log(idToSasak.length)
+
   return (
     <View style={styles.translateBox}>
       <TranslateBoxTitle />
