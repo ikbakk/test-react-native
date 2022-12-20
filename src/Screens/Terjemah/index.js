@@ -13,9 +13,7 @@ const styles = StyleSheet.create({
   scrollView: {
     paddingTop: 20,
     paddingHorizontal: 15,
-    marginBottom: 50,
-    borderColor: 'black',
-    borderWidth: 1
+    marginBottom: 50
   },
   image: {
     resizeMode: 'contain',
